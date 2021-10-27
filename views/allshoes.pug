@@ -1,0 +1,20 @@
+extends layout
+    
+block content
+  .container
+    br
+    .row.justify-content-center
+      div.row
+        h2 Shoes
+        each shoe in shoes
+          div.col-xs-12.col-sm-6.col-lg-4
+            div.card.h-100
+              - var img = shoe.imageFileName
+              img.crop.shoeImg(src='/images/shoes/'+img onerror="this.src='/images/shoes/defaultShoe.jpg" loading="lazy")
+              div.card-body.h5
+                div.d-flex.justify-content-between
+                  a.card-title.stretched-link.shoe-card.font-weight-bold(href='/shoe/'+shoe._id) #{shoe.brand} #{shoe.title}
+                  text.card-text £#{shoe.price}
+                div.card-buttons
+                  span.far.fa-heart.like(__shoe_id=shoe.id id='heart-'+shoe.id onclick="favourite(this, this.getAttribute('__shoe_id'))")
+  script(src="/scripts/favourites.js" type="text/javascript")

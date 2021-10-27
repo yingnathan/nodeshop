@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    br
+    .row.justify-content-center
+    h1 #{title}
+    form(method='POST', action='/shoe/edit/'+shoe._id)
+      #form-group
+        label Title:
+        input.form-control(name='title', type='text' value=shoe.title)
+      #form-group
+        label Brand:
+        input.form-control(name='brand', type='text' value=shoe.brand)
+      #form-group
+        label Gender:
+        input.form-control(name='type', type='text' value=shoe.gender)
+      #form-group
+        label Price (£):
+        input.form-control(name='price', type='number' min='1' step='any' value=shoe.price)
+      #form-group
+        label Image File (include file extension)
+        input.form-control(name='type', type='text' value=shoe.imageFileName)
+      input.btn.btn-primary.mt-4(type='submit' value='Submit')

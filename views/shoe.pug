@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .container
+    br
+    .row.justify-content-center
+      div.row
+        div.col-lg-6
+          div.col-12.d-flex.justify-content-between
+            h1 #{shoe.brand} #{shoe.title}
+            h1 £#{shoe.price}
+          hr
+          p Gender: #{shoe.gender}
+          b How others have described the fit
+          br
+          label.float-start(for="shoeSizeRange") On the small side
+          label.float-end(for="shoeSizeRange") On the large side
+          input.form-range(type="range" id="shoeSizeRange" min="0" max="10" disabled value=shoe.fit)
+          label(for="size") Select a size: &nbsp
+          select#sizes
+            each size in shoe.sizes
+              - var sizeStr = size.split(":").join(" only ")+(" left")
+              option#size(value=size) UK size #{sizeStr}
+          div.mt-4
+            input.btn.btn-primary.me-2(type='submit' value='Add to basket')
+            button.btn.btn-primary(type="button" onclick="history.back(-1)") Back     
+        div.col-lg-6
+          img.shoe-img.img-fluid#shoeImg(width="100%" src='/images/shoes/'+shoe.imageFileName onerror="this.src='/images/shoes/defaultShoe.jpg';" )
+          #imageModal.modal
+            span.close ×
+            img#img01.modal-content
+      
+      div.d-none        
+        a.btn.btn-primary(href='/shoe/edit/'+shoe._id) Edit Shoe
+    script(src="/scripts/modal.js")

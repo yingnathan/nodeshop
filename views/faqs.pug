@@ -1,0 +1,49 @@
+extends layout
+
+prepend head
+  title FAQs
+
+block content
+  .container
+    br
+    .row.justify-content-center
+      h1 FAQs
+      #accordionExample.accordion
+        .accordion-item
+          h2#headingOne.accordion-header
+            button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne')
+              span How long is delivery?
+          #collapseOne.accordion-collapse.collapse(aria-labelledby='headingOne' data-bs-parent='#accordionExample')
+            .accordion-body
+              span Delivery is free and usually takes 2-3 working days. We send our products with Royal Mail, they usually deliver between the hours of 7am and 4pm Monday to Saturday.
+        .accordion-item
+          h2#headingTwo.accordion-header
+            button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+              span How do I make a return?
+          #collapseTwo.accordion-collapse.collapse(aria-labelledby='headingTwo' data-bs-parent='#accordionExample')
+            .accordion-body
+              span You can return your order free of charge at anytime upto 28 days after delivery.
+              ol
+                li Simply log in and find your order and request your free return labels. 
+                li Securely wrap the products and stick on the return label.
+                li Drop off at your local Post Office.
+      hr.mt-5.mb-3
+      div.row
+        div.col-md-6
+          b Didn't find the answer you were looking for? 
+            | Enter your query below and we'll email you an answer within 12 hours.
+          form(method='POST', action='/faqs')
+           #form-group
+             label Title:
+             input.form-control(name='title', type='text' required)
+           #form-group
+             label Query:
+             textarea.form-control(name='query', type='text' required)
+           #form-group
+             label Name
+             input.form-control(name='name', type='text' required)
+           #form-group
+             label Email Address
+             input.form-control(name='email', type='email' required)
+           input.btn.btn-primary.mt-4(type='submit' value='Submit')
+        

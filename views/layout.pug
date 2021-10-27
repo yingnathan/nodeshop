@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+  head
+    block head
+      title Golden Shoe
+      link(rel='apple-touch-icon' sizes='180x180' href='/images/favicons/apple-touch-icon.png')
+      link(rel='icon' type='image/png' sizes='32x32' href='/images/favicons/favicon-32x32.png')
+      link(rel='icon' type='image/png' sizes='16x16' href='/images/favicons/favicon-16x16.png')
+      link(rel='manifest' href='/images/favicons/site.webmanifest')
+      link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous')
+      script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')
+      link(rel='preconnect' href='https://fonts.googleapis.com')
+      link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+      link(href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap' rel='stylesheet')
+      link(rel='stylesheet' href='/css/style.css')
+      link(rel='stylesheet' href='/css/custom.css')
+      script(src='https://kit.fontawesome.com/54e9307a00.js' crossorigin='anonymous')
+      meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  body
+    #content
+      header.p-3.bg-primary.text-white
+        .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+          h1
+            a.nav-link.text-white.py-1.header-title(href='/') Golden Shoe
+          ul.nav.col-12.col-lg-auto.me-lg-auto.mb-1.justify-content-center.mb-md-0
+            li
+              a.nav-link.px-2.text-white(href='/') Home
+            li
+              a.nav-link.px-2.text-white(href='/shoes') Shoes
+            li
+              a.nav-link.px-2.text-white(href='../faqs') FAQs
+      div.promo-banner.text-center
+        i.fas.fa-ghost &nbsp
+        | Enter 
+        span.text-white TRICKSONLY 
+        | at checkout for 10% discount 
+        i.fas.fa-spider
+      block content
+        br
+    footer.navbar.fixed-bottom.justify-content-center.bg-light(id="footer")
+      hr
+      div
+        span Follow us on our socials
+        div.text-primary.text-center.social-links
+          a(href="https://www.instagram.com").px-2
+            i.fab.fa-instagram
+          a(href="https://www.facebook.com").px-2
+            i.fab.fa-facebook-square
+          a(href="https://www.twitter.com").px-2
+            i.fab.fa-twitter
+        div
+          p &copy 2021 Golden Shoe

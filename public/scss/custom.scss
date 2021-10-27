@@ -1,0 +1,9 @@
+/* Custom variables */
+$green: #3f784c;
+$red: #d64933;
+$blue: #23be9f;
+$purple: #8c5383;
+$primary: $green;
+
+/* import only the necessary Bootstrap files */
+@import "../../node_modules/bootstrap/scss/bootstrap";
