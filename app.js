@@ -90,7 +90,7 @@ let shoes = require('./routes/shoes');
 app.use('/shoe', shoes);
 
 // Start server
-let portNumber = 4000;
+let portNumber = process.env.PORT || 4000;
 app.listen(portNumber, () => {
   console.log(`Server started on port: ${portNumber}`);
 });
